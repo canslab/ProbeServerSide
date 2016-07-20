@@ -1,14 +1,15 @@
-from ProbeDevice import ProbeDevice
+from ProbeDevifce import ProbeDevice
 import time
 
 class ControlTower:
-
+	# this class represents the control tower(central command center) to control 
+	# robot device
 	def __init__(self, robotDevice):
 		# ControlTower has a robot device, 
 		# after you receive the json command, you should parse that string,
 		# and make robot work using the specified command 
 		self.mRobotDevice = robotDevice
-		
+			
 	def processJSON(self, strJSONdata):
 		# Process JSON string from the client 
 		# First it identifies the target device 
@@ -21,14 +22,14 @@ class ControlTower:
 			self.processDCMotorJob(strJSONdata)
 		elif strJSONdata["Target"] == "ServoMotors":
 			self.processServoMotorJob(strJSONdata)
-
+		
 	def processServoMotorJob(self, strJSONdata):
 		# Process Servo Motor related Jobs
 		# [Format Example]
 		# {"Target":"ServoMotors", { 0:"Horizontal", 2:#(dutyCycle) }}
 		strSide = strJSONdata["Params"][0]
 		numDutyCycle = strJSONdata["Params"][1]
-
+		
 		# if the first parameter is equal to "Horizontal", it means you should control bottom servo mottor(horizontal servo motor)
 		# otherwise, it means the upper servo motor(vertical servo motor)
 		if strSide == "Horizontal":
