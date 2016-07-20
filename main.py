@@ -1,8 +1,6 @@
-#!/usr/bin/python
 import sys
 from socket import *
 from struct import *
-
 import json
 import time
 import atexit

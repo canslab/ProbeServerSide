@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 from Adafruit_MotorHAT import Adafruit_MotorHAT, Adafruit_DCMotor, Jangho_Servo, Jangho_LED
 
 # This class allows you to control robot in the low-level manner
@@ -79,4 +77,5 @@ class ProbeDevice:
 				self.mRightLED.runLED(Adafruit_MotorHAT.LED_OFF)
 
 	def endUseDevice(self):
+
 		turnOffMotors(self)		

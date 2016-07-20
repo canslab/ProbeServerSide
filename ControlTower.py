@@ -1,4 +1,3 @@
-#!/usr/bin/python
 from ProbeDevice import ProbeDevice
 import time
 
@@ -9,7 +8,7 @@ class ControlTower:
 		# after you receive the json command, you should parse that string,
 		# and make robot work using the specified command 
 		self.mRobotDevice = robotDevice
-
+		
 	def processJSON(self, strJSONdata):
 		# Process JSON string from the client 
 		# First it identifies the target device 
